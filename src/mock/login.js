@@ -4,20 +4,24 @@ const userMap = {
     token: 'admin',
     introduction: '我是超级管理员',
     name: '我是超级管理员silianpan',
-    password: '123'
+    password: 'admin'
   }
 }
 
 export default {
   login: config => {
+    console.log('config', config);
     const { username } = config.params;
     return new Promise((resolve, reject) => {
       if (userMap[username]) {
-        setTimeout(() => {
-          resolve([200, {
-            data: userMap[username]
-          }]);
-        }, 500);
+        resolve([200, {
+          data: userMap[username]
+        }]);
+        // setTimeout(() => {
+        //   resolve([200, {
+        //     data: userMap[username]
+        //   }]);
+        // }, 500);
       } else {
         reject('账号不正确')
       }

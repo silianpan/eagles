@@ -45,16 +45,18 @@ export default {
   },
   methods: {
     loginAction() {
+      const self = this;
       this.$refs.user.validate((valid) => {
-        var self = this;
         if (valid) {
-          this.loading = true;
-          this.$store.dispatch('Login', this.user).then(() => {
-            this.loading = false;
-            this.$router.push({ path: '/home' });
+          self.loading = true;
+          console.log('user',self.user);
+          self.$store.dispatch('Login', self.user).then(() => {
+            self.loading = false;
+            console.log('lading', true);
+            self.$router.push({ path: '/home' });
           }).catch(err => {
-            this.$message.error(err);
-            this.loading = false;
+            // self.$message.error(err);
+            self.loading = false;
           });
         } else {
           console.log('error submit!!');
