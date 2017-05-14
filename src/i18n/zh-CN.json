@@ -1,0 +1,14 @@
+{
+  "time": {
+    "ago": "前",
+    "units": {
+      "minute": "分",
+      "hour": "时",
+      "day": "日"
+    }
+  },
+  "locales": {
+    "en-US": "英文",
+    "zh-CN": "简体中文"
+  }
+}

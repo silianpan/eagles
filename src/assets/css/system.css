@@ -1,0 +1,585 @@
+body {
+	/*background-color: #eee;*/
+}
+/*.header {
+	height: 54px;
+	width: 100%;
+	background-color: #098be3;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9;
+}*/
+.container {
+	position: absolute;
+	/*top: 54px;*/
+	bottom: 18px;
+	width: 100%;
+}
+.menu {
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 0;
+}
+.menu li {
+	display: inline-block;
+	font-size: 14px;
+	line-height: 54px;
+	position: relative;
+}
+.menu li a {
+	padding: 0 24px;
+	height: 54px;
+	display: block;
+	position: relative;
+	border-left: 1px solid #067bca;
+}
+.menu li a i{ width:6px; height:6px; overflow:hidden; border-radius:2px; text-indent:6em; position:absolute; right:18px; top:12px; background-color: #ffa800; color:#fff; font-style:normal; line-height:14px; text-align:center; font-size:12px;}
+.menu li a:hover {
+	background-color: #067bca;
+}
+.menu li a.active {
+	background-color: #067bca;
+}
+.menu li a span {
+	display: inline-block;
+	margin-top: 11px;
+	width: 32px;
+	height: 32px;
+	overflow: hidden;
+	text-indent: 10em;
+	background: no-repeat;
+	background-size:28px 28px;
+	background-position:2px 2px;
+}
+.menu li a .home {
+	background-image: url(../img/home32.svg);
+}
+.menu li a .setting {
+	/*background-image: url(../img/setting32.svg);*/
+	background-image: url(../img/setting.png);
+}
+.menu li a .account {
+	background-image: url(../img/user32.svg);
+}
+.menu li a .alarm {
+	background-image: url(../img/alarm32.svg);
+}
+
+.container .left {
+	width: 180px;
+	position: fixed;
+	top: 54px;
+	bottom: 0;
+	background-color: #242424;
+	left: 0;
+}
+.container .right {
+	position: absolute;
+	top: 0;
+	left: 180px;
+	right: 0;
+	bottom: 0;
+}
+/*菜单显示*/
+.sNav .left {
+	width: 48px;
+}
+.sNav .right {
+	left: 48px;
+}
+.sNav .navText {
+	display: none;
+}
+.nav {
+}
+.nav li {
+	border-bottom: 1px solid #1c1c1c;
+	display: block;
+	position: relative;
+}
+.nav li a {
+	color: #fff;
+	line-height: 24px;
+	display: block;
+	position: relative;
+}
+.nav li a:hover, .nav li a.active, .nav a.closeBtn:hover {
+	background-color: rgba(255,255,255,0.1);
+}
+.nav a.closeBtn {
+	cursor: pointer;
+	padding: 0;
+	display: block;
+	height: 30px;
+	position: relative;
+	text-align: center;
+	border-bottom: 1px solid #161616;
+}
+.nav a.closeBtn b {
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	overflow: hidden;
+	margin-top: 3px;
+	background-image: url(../img/ctrlBtn.png);
+}
+.navIcon {
+	display: inline-block;
+	height: 48px;
+	width: 48px;
+	position: relative;
+}
+.nav li a i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -8px 0 0 -8px;
+	width: 16px;
+	height: 16px;
+	background-image: url(../img/navIcon.png);
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+.nav li a i.topology {
+	background-position: 0 0;
+}
+.nav li a i.alarm {
+	background-position: -16px 0;
+}
+.nav li a i.report {
+	background-position: -32px 0;
+}
+.nav li a i.intelligent {
+	background-position: -48px 0;
+}
+.nav li a i.system {
+	background-position: -64px 0;
+}
+.nav li a .navText {
+	line-height: 48px;
+}
+.nav .subNav {
+	position: absolute;
+	top: 0;
+	width: 180px;
+	left: 180px;
+	z-index: 99;
+	background-color: #242424;
+	display: none;
+	box-shadow: 6px 6px 24px rgba(0,0,0,0.4);
+}
+.sNav .nav .subNav {
+	left: 48px;
+}
+.nav .subNav li {
+}
+.nav li:hover .subNav {
+	display: inline-block;
+}
+.nav .subNav a {
+	padding: 0 18px;
+	line-height: 48px;
+	display: block;
+}
+.viewBlock {
+	/*position: relative;*/
+	background-color: #fff;
+	/*min-height: 300px;*/
+	/*margin: 16px;*/
+}
+/*.logo {
+	font-size: 24px;
+	color: #fff;
+	font-weight: normal;
+	line-height: 54px;
+	padding: 0 30px;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}*/
+.subTitles {
+	margin-bottom: 10px;
+	/*padding: 16px 16px 0 16px;*/
+	color: #333;
+	line-height: 24px;
+	font-size: 18px;
+	font-weight: normal;
+	text-align: left;
+}
+.aboutBlockText {
+	padding: 0 30px;
+	position: relative;
+}
+.textTipsBlock {
+	line-height: 30px;
+	color: #999;
+}
+.btnGroupBox {
+	padding: 18px 30px;
+	position: relative;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	background-color: #f8f8f8;
+	margin-top:24px;
+}
+.selectType {
+}
+.viewMain {
+	padding: 0 30px 30px 30px;
+}
+.topViewBlock {
+	min-height: 480px;
+	position: relative;
+}
+.queryGroup {
+	margin-right: 12px;
+	position: relative;
+	height: 38px;
+}
+.delUser {
+	height: 36px;
+	display: inline-block;
+	line-height: 36px;
+	border-radius: 3px;
+	cursor: pointer;
+	margin-right: 6px;
+	padding: 0 18px;
+	background-color: #fff;
+	color: #666;
+	border: 1px solid #ccc;
+}
+.addUser {
+	height: 38px;
+	display: inline-block;
+	line-height: 38px;
+	border-radius: 3px;
+	cursor: pointer;
+	margin-right: 6px;
+	padding: 0 18px;
+	background-color: #0092ff;
+	color: #fff;
+}
+.addUser:hover {
+	background-color: #007ddb;
+}
+.undoBtn {
+	background-color: #f2f2f2;
+	cursor: default;
+}
+.clearFix {
+	clear: both;
+	float: none;
+}
+.uplayoutBox {
+	position: relative;
+}
+.addTwoLevelbox {
+	width: 420px;
+	padding: 30px;
+}
+.tips_icon {
+	display: block;
+	width: 48px;
+	height: 48px;
+	float: left;
+	margin-right: 12px;
+}
+.confirm_icon48 {
+	 /*background-image: url(../img/confirm_icon48.png);*/
+}
+.confirmBoxRight {
+	height: 48px;
+}
+.confirmBoxRight h4 {
+	line-height: 24px;
+	color: #333;
+}
+.wrp h2.wrpTitle .subTopTitle, .sortCancel:hover, .confirmBoxRight p, .customServiceText p {
+	color: #999;
+}
+.hide {
+	display: none;
+}
+.addTwoLevelbox .frmBox {
+	line-height: 30px;
+	color: #999;
+}
+.frmBoxInput {
+	display: block;
+	border: 1px solid #ccc;
+	padding: 0 6px;
+}
+.frmBoxInput input {
+	border: none;
+	width: 100%;
+	line-height: 20px;
+	padding: 6px 0;
+}
+.addData {
+	position: relative;
+	margin-top: 30px;
+	border: 1px solid #ddd;
+	/*background: url(../img/ddd.png) repeat-y 240px;*/
+}
+.dashboard {
+	position: relative;
+	margin: 18px;
+}
+.dashboard .boardMain {
+	position: relative;
+	font-size: 0;
+	margin-right: -18px;
+}
+.itemCharBox {
+	position: absolute;
+	top: 18px;
+	left: 18px;
+	right: 18px;
+	bottom: 18px;
+}
+.dashboard .blockItem {
+	display: inline-block;
+	position: relative;
+	margin-bottom: 18px;
+}
+.dashboard .blockItem .itemMain {
+	margin-right: 18px;
+	min-height: 300px;
+	background-color: #fff;
+}
+.dashboard .col_2 {
+	width: 50%;
+}
+.dashboard .col_3 {
+	width: 33.33%;
+}
+.dashboard .col_4 {
+	width: 25%;
+}
+.dashboard .col_5 {
+	width: 20%;
+}
+.rightLayout {
+	width: 80%;
+	z-index: 999;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 100%;
+	overflow: auto;
+	background-color: #fff;
+	display:none;
+}
+.showBlock{
+	box-shadow: -6px 0 6px rgba(0,0,0,0.1);
+	}
+.layoutWrap {
+	position: relative;
+}
+.layoutTop {
+	position: fixed;
+	top:0;
+	right:0;
+	left:100%;
+	/*padding-bottom: 30px;*/
+	z-index:99;
+	height:72px;
+	background-color:#fff;
+}
+.layoutTop .layoutTopMain{ padding:18px 24px; position:relative;}
+.layoutMain{ padding:72px 0px 5px 5px;}
+.layoutTitle {
+	position: relative;
+	display: inline-block;
+	line-height: 36px;
+	padding: 0;
+}
+.layoutTitle .typeImg {
+	display: inline-block;
+	max-height: 36px;
+	overflow: hidden;
+	margin-right:18px;
+}
+.layoutTitle .typeImg img{ max-height:36px;}
+.layoutTitle .typeName {
+	font-size: 18px;
+	font-weight: normal;
+}
+.hideLayoutBtn {
+	position: absolute;
+	right: 24px;
+	height: 32px;
+	font-size: 14px;
+	padding-left: 40px;
+	line-height: 32px;
+	color: #999;
+}
+.layoutCloseIcon {
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	background: url(../img/close32.png) no-repeat;
+}
+.hideLayoutBtn:hover .layoutCloseIcon {
+	background-position: 0 -32px;
+}
+.viewTab {
+	border-bottom: 1px solid #ccc;
+	position: relative;
+	font-size: 0;
+}
+.viewTab li {
+	display: inline-block;
+	margin: 0 12px -1px 0;
+}
+.viewTab li a {
+	display: block;
+	padding: 0 30px;
+	line-height: 36px;
+	position: relative;
+	color: #999;
+	font-size: 14px;
+	padding-bottom: 1px;
+	border: 1px solid #fff;
+	border-bottom-color: #ccc;
+}
+.viewTab li a:hover {
+	background-color: #f8f8f8;
+	border-color: #eee;
+	border-bottom-color: #ccc;
+}
+.viewTab li a.active {
+	border: 1px solid #ccc;
+	border-bottom-color: #fff;
+	color: #333;
+	font-weight: 700;
+}
+.viewTab li a.active:hover {
+	background-color: #fff;
+}
+.hoverTab {
+	position: relative;
+	font-size: 0;
+}
+.hoverTab li {
+	display: inline-block;
+	margin: 0 12px 0 0;
+}
+.hoverTab li a {
+	display: block;
+	padding: 0 18px;
+	line-height: 36px;
+	position: relative;
+	color: #666;
+	font-size: 16px;
+	border-bottom: 2px solid #fff;
+}
+.hoverTab li a:hover {
+	border-bottom-color: #666;
+}
+.hoverTab li a.active {
+	border-bottom-color: #666;
+	color: #333;
+}
+.hoverTab li a.active:hover {
+	background-color: #fff;
+}
+
+
+
+.datagridBox {
+}
+.datagridBox table {
+}
+.datagridBox table tr td {
+	position: relative;
+	text-align: right;
+	padding:6px 6px 6px 0;
+}
+.dataGrild table th, .dataGrild table td {
+		border-bottom:1px solid #e5e5e5;
+}
+.dataGrild table th {
+	  border-bottom-color:#ccc; font-weight: normal;color:#000;
+}
+.dataGrild table th:last-child{ border-right:none;}
+.dataGrild table .active td {
+	background-color: #00baff;
+	color: #fff;
+	border-bottom: none;
+}
+.chartBox {
+	width: 100%;
+	height: 360px;
+	position: relative;
+	visibility: visible;
+}
+.viewItem,.viewContent {
+	display: none;
+	position: relative;
+}
+.viewItem:first-child,.viewContent:first-child {
+	display: block;
+}
+.normalLink{ padding:0 12px; display:inline-block; position:relative; color:#999; cursor:pointer;}
+.normalLink:hover,.dropdown:hover{ color:#333;}
+.typeBox{ margin-top:12px; font-size:0;}
+.typeItem{width: 240px; display: inline-block;
+    height: 70px;
+    padding: 18px;
+    position: relative;
+	 font-size:12px;
+    background-color: #fff;
+    cursor: pointer;
+    border: solid 1px #ddd;
+    margin-right: 6px;
+    margin-bottom: 6px;}
+.typeItem:hover{ border-color:#ccc; background-color:#f8f8f8;}
+.typeIcon,.typeName{ display:inline-block; vertical-align:middle;}
+.addTwoLevelbox {
+    width: 420px;
+    padding: 30px;
+}
+.tips_icon {
+    display: block;
+    width: 48px;
+    height: 48px;
+    float: left;
+    margin-right: 12px;
+}
+.confirm_icon48 {
+    background-image: url(../img/confirm_icon48.png);
+}
+.tips_icon {
+	display: block;
+	width: 48px;
+	height: 48px;
+	float: left;
+	margin-right: 12px;
+}
+.confirm_icon48 {
+	background-image: url(../img/confirm_icon48.png);
+}
+.confirmBoxRight {
+	height: 48px;
+}
+.confirmBoxRight h4 {
+	line-height: 24px;
+	color: #333;
+	padding:0;
+}
+.topomenu{ position: absolute; background-color:#fff; border:1px solid #ddd; font-size: 10px;}
+.topomenu div li{ line-height:28px;}
+.topomenu div li a{ padding:0 8px; display:block; cursor:pointer;}
+.topomenu div:last-child { border-bottom:none; }
+.topomenu div li a:hover{ background-color:#f8f8f8;}
+.topomenu div li a i {
+	padding-right: 5px;
+}
+.split_line {
+	border-bottom: 1px solid #99A9BF;
+}

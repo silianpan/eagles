@@ -2,6 +2,7 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
+var webpack = require("webpack")
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -22,7 +23,20 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      '@': resolve('src'),
+      'src': path.resolve(__dirname, '../src'),
+      'api': path.resolve(__dirname, '../src/api'),
+      'assets': path.resolve(__dirname, '../src/assets'),
+      'common': path.resolve(__dirname, '../src/common'),
+      'components': path.resolve(__dirname, '../src/components'),
+      'i18n': path.resolve(__dirname, '../src/i18n'),
+      'libs': path.resolve(__dirname, '../src/libs'),
+      'mock': path.resolve(__dirname, '../src/mock'),
+      'router': path.resolve(__dirname, '../src/router'),
+      'store': path.resolve(__dirname, '../src/store'),
+      'utils': path.resolve(__dirname, '../src/utils'),
+      'views': path.resolve(__dirname, '../src/views'),
+      'static': path.resolve(__dirname, '../static')
     }
   },
   module: {
@@ -54,5 +68,12 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+   new webpack.optimize.CommonsChunkPlugin('common.js'),
+   new webpack.ProvidePlugin({
+       jQuery: "jquery",
+       $: "jquery"
+   })
+  ]
 }

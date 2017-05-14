@@ -1,0 +1,305 @@
+*{margin:0;padding:0;}
+html,body,#app,.wrapper{
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+body{
+    font-family:"Helvetica Neue",Helvetica, "microsoft yahei", arial, STHeiTi, sans-serif;
+}
+a{text-decoration: none}
+.content{
+    background: none repeat scroll 0 0 #eee;
+    position: absolute;
+    left: 150px;
+    right: 0;
+    /*top: 54px;*/
+    bottom:0;
+    width: auto;
+    /*padding:40px;*/
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+.crumbs{
+    margin-bottom: 20px;
+}
+.pagination{
+    margin: 20px 0;
+    text-align: right;
+}
+.plugins-tips{
+    padding:20px 10px;
+    margin-bottom: 20px;
+}
+.el-button+.el-tooltip {
+    margin-left: 10px;
+}
+.el-table td,.el-table th{
+    padding:5px 18px;
+}
+.el-table tr:hover{
+    background: #f6faff;
+}
+.mgb20{
+    margin-bottom: 20px;
+}
+
+.move-enter-active,.move-leave-active{
+    transition: opacity .5s;
+}
+.move-enter,.move-leave{
+    opacity: 0;
+}
+/*BaseForm*/
+.form-box{
+    width:600px;
+}
+.form-box .line{
+    text-align: center;
+}
+.el-time-panel__content::after, .el-time-panel__content::before {
+    margin-top: -7px;
+}
+/*Readme*/
+.ms-doc .el-checkbox__input.is-disabled+.el-checkbox__label{
+    color: #333;
+    cursor: pointer;
+}
+/*Upload*/
+.pure-button{
+    width:150px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    border-radius: 3px;
+}
+.g-core-image-corp-container .info-aside{
+    height:45px;
+}
+.el-upload--text {
+    background-color: #fff;
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    box-sizing: border-box;
+    width: 360px;
+    height: 180px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.el-upload--text .el-icon-upload {
+    font-size: 67px;
+    color: #97a8be;
+    margin: 40px 0 16px;
+    line-height: 50px;
+}
+.el-upload--text {
+    color: #97a8be;
+    font-size: 14px;
+    text-align: center;
+}
+.el-upload--text em {
+    font-style: normal;
+}
+/*VueEditor*/
+.ql-container{
+    min-height: 400px;
+}
+.ql-snow .ql-tooltip{
+    transform: translateX(117.5px) translateY(10px) !important;
+}
+.editor-btn{
+    margin-top: 20px;
+}
+.icon-menu-device {
+  background: url("../img/navIcon.png") no-repeat scroll 0 0;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.icon-menu-topo {
+  background: url("../img/navIcon.png") no-repeat scroll 0 0;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.icon-menu-business {
+  background: url("../img/navIcon.png") no-repeat scroll 0 0;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.icon-menu-alarm {
+  background: url("../img/navIcon.png") no-repeat scroll -16px 0;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.icon-menu-report {
+  background: url("../img/navIcon.png") no-repeat scroll -32px 0;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.icon-menu-config {
+  background: url("../img/navIcon.png") no-repeat scroll -64px 0;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.icon-menu-system {
+  background: url("../img/navIcon.png") no-repeat scroll -64px 0;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.icon-page-folder {
+  background: url("../img/page/folder.svg") no-repeat scroll 0 0;
+  background-size:16px 16px;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  margin-bottom:-4px;
+  display: inline-block;
+}
+
+.icon-page-network {
+  background: url("../img/page/Internet.svg") no-repeat scroll 0 0;
+  background-size:16px 16px;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  margin-bottom:-4px;
+  display: inline-block;
+}
+
+.icon-page-server {
+  background: url("../img/page/server.svg") no-repeat scroll 0 0;
+  background-size:16px 16px;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  margin-bottom:-4px;
+  display: inline-block;
+}
+
+.icon-page-linux {
+  background: url("../img/page/linux.svg") no-repeat scroll 0 0;
+  background-size:16px 16px;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  margin-bottom:-4px;
+  display: inline-block;
+}
+
+.icon-page-middleware {
+  background: url("../img/page/middleware.svg") no-repeat scroll 0 0;
+  background-size:16px 16px;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  margin-bottom:-4px;
+  display: inline-block;
+}
+
+.icon-page-datadb {
+  background: url("../img/page/dataDB.svg") no-repeat scroll 0 0;
+  background-size:16px 16px;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  margin-bottom:-4px;
+  display: inline-block;
+}
+
+.icon-page-itemgreen {
+  background: url("../img/page/node-green.svg") no-repeat scroll 0 0;
+  background-size:16px 16px;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  margin-bottom:-4px;
+  display: inline-block;
+}
+
+.icon-page-itemred {
+  background: url("../img/page/node-red.svg") no-repeat scroll 0 0;
+  background-size:16px 16px;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  margin-bottom:-4px;
+  display: inline-block;
+}
+
+.icon-page-other {
+  background: url("../img/page/other.svg") no-repeat scroll 0 0;
+  background-size:16px 16px;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  margin-bottom:-4px;
+  display: inline-block;
+}
+
+.icon-header-logo {
+  background: url("../img/eagle2.png") no-repeat scroll 0 0;
+  background-size: 30px 30px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.el-table .alarm_severity_not_classified {
+  background: #CCCCCC
+}
+.el-table .alarm_severity_information {
+  background: #7499FF
+}
+.el-table .alarm_severity_warning {
+  background: #FFC859
+}
+.el-table .alarm_severity_average {
+  background: #FFA059
+}
+.el-table .alarm_severity_high {
+  background: #FF3300
+}
+.el-table .alarm_severity_disaster {
+  background: #990000
+}
+
+.custom-theme .el-table .alarm_severity_not_classified {
+  background: #CCCCCC
+}
+.custom-theme .el-table .alarm_severity_information {
+  background: #7499FF
+}
+.custom-theme .el-table .alarm_severity_warning {
+  background: #FFC859
+}
+.custom-theme .el-table .alarm_severity_average {
+  background: #FFA059
+}
+.custom-theme .el-table .alarm_severity_high {
+  background: #FF3300
+}
+.custom-theme .el-table .alarm_severity_disaster {
+  background: #990000
+}
