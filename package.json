@@ -30,7 +30,8 @@
     "nprogress": "^0.2.0",
     "sass-loader": "^6.0.3",
     "node-sass": "^4.5.2",
-    "mockjs": "^1.0.1-beta3"
+    "mockjs": "^1.0.1-beta3",
+    "axios-mock-adapter": "^1.8.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",

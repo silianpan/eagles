@@ -16,6 +16,7 @@ Vue.component('icon', Icon)
 import store from './store'
 import i18n from './i18n'
 import axios from 'api/http'
+import './mock/index.js';  //使用api请求时请将此行注释，不然将被mock拦截
 
 // 引用样式
 import 'element-ui/lib/theme-default/index.css'

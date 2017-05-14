@@ -1,5 +1,4 @@
 import axios from './http'
-// import {Loading} from 'element-ui'
 import NProgress from 'nprogress'
 import {
   API_BASEURL,

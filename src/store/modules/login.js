@@ -1,58 +1,118 @@
 /**
  * login module
  */
-// import {getCookie} from '../../utils/authService'
-// import LoginAction from '../../api/login'
-import Vue from 'vue'
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
-export const USERINFO_SUCCESS = 'USERINFO_SUCCESS'
-export const USERINFO_FAILURE = 'USERINFO_FAILURE'
-export const LOGOUT_USER = 'LOGOUT_USER'
-export const UPDATE_USER_SUCCESS = 'UPDATE_USER_SUCCESS'
-
+import loginApi from 'api/login'
+import {saveCookie, getCookie} from 'utils/authService'
 export default {
   state: {
-    user: null,
-    // token: getCookie('token') || null,
-    msg: ''
+    user: '',
+    status: '',
+    email: '',
+    code: '',
+    uid: undefined,
+    auth_type: '',
+    token: getCookie('Access-Token'),
+    name: '',
+    avatar: '',
+    introduction: '',
+    roles: [],
+    setting: {
+      articlePlatform: []
+    }
   },
   mutations: {
-    // [LOGIN_SUCCESS](state, data) {
-    //   state.token = data.token;
-    //   state.user = data;
-    // },
-    // [USERINFO_SUCCESS](state, action) {
-    //   state.user = action.user
-    // },
-    // [USERINFO_FAILURE](state, msg) {
-    //   state.user = null
-    //   state.msg = msg
-    // },
-    // [LOGOUT_USER](state, action) {
-    //   state.token = getCookie('token') || null
-    //   state.user = null
-    // },
-    // [UPDATE_USER_SUCCESS](state, action) {
-    //   state.user = action.user
-    // }
+    SET_AUTH_TYPE: (state, type) => {
+      state.auth_type = type;
+    },
+    SET_CODE: (state, code) => {
+      state.code = code;
+    },
+    SET_TOKEN: (state, token) => {
+      state.token = token;
+    },
+    SET_UID: (state, uid) => {
+      state.uid = uid;
+    },
+    SET_EMAIL: (state, email) => {
+      state.email = email;
+    },
+    SET_INTRODUCTION: (state, introduction) => {
+      state.introduction = introduction;
+    },
+    SET_SETTING: (state, setting) => {
+      state.setting = setting;
+    },
+    SET_STATUS: (state, status) => {
+      state.status = status;
+    },
+    SET_NAME: (state, name) => {
+      state.name = name;
+    },
+    SET_AVATAR: (state, avatar) => {
+      state.avatar = avatar;
+    },
+    SET_ROLES: (state, roles) => {
+      state.roles = roles;
+    },
+    LOGIN_SUCCESS: () => {
+      console.log('login success')
+    },
+    LOGOUT_USER: state => {
+      state.user = '';
+    }
   },
   actions: {
-    loginAction({commit}, loginInfo) {
-      return true;
-      // LoginAction.userLogin(loginInfo).then(data => {
-      //   if (data.exception == null) {
-      //     commit(LOGIN_SUCCESS, data.data);
-      //     // this.$router.push({name: 'Home'});
-      //     return true ;
-      //   } else {
-      //     commit(USERINFO_FAILURE,"用户名和密码不对，请重新输入");
-      //     return false;
-      //   }
-      // }).catch(err => {
-      //   console.log(err);
-      //   commit(USERINFO_FAILURE,"用户名和密码不对");
-      //   return false;
-      // });
-    }
+    Login({ commit }, userInfo) {
+      return new Promise((resolve, reject) => {
+        loginApi.login(userInfo).then(response => {
+          const data = response.data;
+          saveCookie('Acess-Token', response.data.token);
+          commit('SET_TOKEN', data.token);
+          commit('SET_EMAIL', email);
+          resolve();
+        }).catch(error => {
+          reject(error);
+        });
+      });
+    },
+
+    //  // 获取用户信息
+    // GetInfo({ commit, state }) {
+    //   return new Promise((resolve, reject) => {
+    //     loginApi.getInfo(state.token).then(response => {
+    //       const data = response.data;
+    //       commit('SET_ROLES', data.role);
+    //       commit('SET_NAME', data.name);
+    //       commit('SET_AVATAR', data.avatar);
+    //       commit('SET_INTRODUCTION', data.introduction);
+    //       resolve(response);
+    //     }).catch(error => {
+    //       reject(error);
+    //     });
+    //   });
+    // },
+    //
+    // // 登出
+    // LogOut({ commit, state }) {
+    //   return new Promise((resolve, reject) => {
+    //     loginApi.logout(state.token).then(() => {
+    //       commit('SET_TOKEN', '');
+    //       commit('SET_ROLES', []);
+    //       Cookies.remove('X-Ivanka-Token');
+    //       resolve();
+    //     }).catch(error => {
+    //       reject(error);
+    //     });
+    //   });
+    // },
+    //
+    // // 前端 登出
+    // FedLogOut({ commit }) {
+    //   return new Promise(resolve => {
+    //     commit('SET_TOKEN', '');
+    //     Cookies.remove('X-Ivanka-Token');
+    //     resolve();
+    //   });
+    // }
   }
 }

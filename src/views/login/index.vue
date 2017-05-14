@@ -44,41 +44,23 @@ export default {
     };
   },
   methods: {
-    loginAction(ev) {
-      this.$router.push({path: '/home'});
-      // this.$refs.user.validate((valid) => {
-      //   var self = this;
-      //   if (valid) {
-      //     this.logining = true;
-      //     var loginParams = {
-      //       name: this.user.name,
-      //       password: this.user.password
-      //     };
-      //     LoginService.userLogin(loginParams).then(function(response) {
-      //       self.logining = false;
-      //       if (response.data.errorCode == null) {
-      //
-      //         self.$store.commit(types.LOGIN_SUCCESS, response.data);
-      //         self.$router.push({path: '/home'});
-      //       } else {
-      //         self.logining = false;
-      //         self.$message({
-      //           message:"用户名和密码不对，请重新输入",
-      //           type:"info"
-      //         });
-      //         self.$store.commit(types.USERINFO_FAILURE, "用户名和密码不对，请重新输入");
-      //       }
-      //     }).catch(function(error) {
-      //       console.log(error);
-      //       self.logining = false;
-      //       self.$message({
-      //         message:"用户名和密码不对，请重新输入",
-      //         type:"info"
-      //       });
-      //       self.$store.commit(types.USERINFO_FAILURE, "用户名和密码不对");
-      //     });
-      //   }
-      // });
+    loginAction() {
+      this.$refs.user.validate((valid) => {
+        var self = this;
+        if (valid) {
+          this.loading = true;
+          this.$store.dispatch('Login', this.user).then(() => {
+            this.loading = false;
+            this.$router.push({ path: '/home' });
+          }).catch(err => {
+            this.$message.error(err);
+            this.loading = false;
+          });
+        } else {
+          console.log('error submit!!');
+          return false;
+        }
+      });
     }
   }
 }
