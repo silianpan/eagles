@@ -10,21 +10,18 @@ const userMap = {
 
 export default {
   login: config => {
-    console.log('config', config);
     const { name } = config.params;
+    return new Promise((resolve, reject) => {
       if (userMap[name]) {
-        return [200, {
-          data: userMap[name]
-        }];
-        // setTimeout(() => {
-        //   resolve([200, {
-        //     data: userMap[username]
-        //   }]);
-        // }, 500);
+        setTimeout(() => {
+          resolve([200, {
+            data: userMap[name]
+          }]);
+        }, 500);
       } else {
-        return [300, '账号不正确'];
+        reject('账号不正确')
       }
-
+    })
   },
   getInfo: config => {
     const { token } = config.params;

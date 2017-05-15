@@ -49,13 +49,11 @@ export default {
       this.$refs.user.validate((valid) => {
         if (valid) {
           self.loading = true;
-          self.$store.dispatch('Login', self.user).then((response) => {
-            // 对返回值做判断
-            console.log(response);
+          self.$store.dispatch('Login', self.user).then(() => {
             self.loading = false;
             self.$router.push({ path: '/home' });
           }).catch(err => {
-            // self.$message.error(err);
+            self.$message.error(err);
             self.loading = false;
           });
         } else {

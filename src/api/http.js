@@ -33,7 +33,6 @@ axios.interceptors.request.use(
 axios.interceptors.response.use(
   response => {
     NProgress.done();
-    // console.log(response);
     return response;
   },
   error => {
