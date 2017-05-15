@@ -4,7 +4,6 @@
  */
 
 import axios from 'axios'
-import store from 'store/modules/login'
 // import * as types from 'store/modules/login'
 import NProgress from 'nprogress'
 // axios 配置
@@ -12,6 +11,9 @@ axios.defaults.withCredentials = true ;
 axios.defaults.timeout = 50000;
 // axios.defaults.headers.common['Authorization'] = 'token';
 axios.defaults.headers.post['Content-Type']  = "application/json";
+import store from '../store'
+console.log('store', this)
+
 
 // var csrftoken = window.document.cookie.get('csrftoken');
 // axios.defaults.headers.common['HTTP_X_CSRFTOKEN'] = csrftoken;
@@ -19,9 +21,10 @@ axios.defaults.headers.post['Content-Type']  = "application/json";
 // http request 拦截器
 axios.interceptors.request.use(
   config => {
-    // if (store.state.token) { // 判断是否存在token，如果存在的话，则每个http header都加上token
-    //   config.headers.Authorization = `token ${store.state.token}`;
+    // if (store.login.state.token) { // 判断是否存在token，如果存在的话，则每个http header都加上token
+    //   config.headers.Authorization = `token ${store.state.login.token}`;
     // }
+    // console.log('store main fdsfd', store)
     NProgress.start();
     return config;
   },

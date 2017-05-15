@@ -1,11 +1,8 @@
 import axios from './http'
 import NProgress from 'nprogress'
-import {
-  API_BASEURL,
-  API_TIMEOUT
-} from '../config'
+import {API_BASEURL,API_TIMEOUT} from '../config'
 export default {
-  axiosOptions: function(url, method = 'get', params = {},tag =true) {
+  axiosOptions: function(url, method = 'get', params = {}, tag = true) {
     params._ = Math.random();
     const self = this;
     var options = {
@@ -20,7 +17,6 @@ export default {
       responseType: 'json',
       baseURL: API_BASEURL,
       timeout: API_TIMEOUT,
-
 
       //将upload事件注释掉，防止跨域状态下发起option请求
       // onUploadProgress: function(progressEvent) {
@@ -58,7 +54,6 @@ export default {
       // 我这里不太清楚 后台接受 post 数据的形式
       // 可能是 @RequestBody 也可能是@RequestParam
       options.data = params;
-      console.log(options.data);
     };
     return options;
   },
