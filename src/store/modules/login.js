@@ -63,17 +63,17 @@ export default {
   },
   actions: {
     Login({ commit }, userInfo) {
-      return new Promise((resolve, reject) => {
+      // return new Promise((resolve, reject) => {
         loginApi.login(userInfo).then(response => {
           const data = response.data;
           saveCookie('Acess-Token', response.data.token);
           commit('SET_TOKEN', data.token);
-          commit('SET_EMAIL', email);
-          resolve();
+          // resolve();
         }).catch(error => {
-          reject(error);
+          console.log("error",error);
+          // reject(error);
         });
-      });
+      // });
     },
 
     //  // 获取用户信息

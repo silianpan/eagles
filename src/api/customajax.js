@@ -8,13 +8,13 @@ export default {
   axiosOptions: function(url, method = 'get', params = {},tag =true) {
     params._ = Math.random();
     const self = this;
-    self.loadInstance = null;
     var options = {
       url: url,
       method: method,
       headers: {
         'X-Requested-With': 'XMLHttpRequest',
-        'credentials': 'include'
+        'credentials': 'include',
+        // 'Access-Token': self.$store.state.login.token
       },
       // `responseType` 表示服务器响应的数据类型，可以是 'arraybuffer', 'blob', 'document', 'json', 'text', 'stream'
       responseType: 'json',
@@ -92,7 +92,7 @@ export default {
    *@param url 用户输入的url
    *@returns axios
    */
-  save: function(url, params = {},tag=true) {
+  save: function(url, params = {}, tag = true) {
     var options = this.axiosOptions(url, 'post', params,tag);
     return axios(options);
   },

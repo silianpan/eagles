@@ -49,10 +49,10 @@ export default {
       this.$refs.user.validate((valid) => {
         if (valid) {
           self.loading = true;
-          console.log('user',self.user);
-          self.$store.dispatch('Login', self.user).then(() => {
+          self.$store.dispatch('Login', self.user).then((response) => {
+            // 对返回值做判断
+            console.log(response);
             self.loading = false;
-            console.log('lading', true);
             self.$router.push({ path: '/home' });
           }).catch(err => {
             // self.$message.error(err);
