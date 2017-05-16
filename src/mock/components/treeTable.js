@@ -4,7 +4,6 @@ import hostJson from './host.json'
 
 export default {
   listHostgroup: () => new Promise(resolve => {
-    console.log("fjdksfjdksjfkdsjkfdj")
     setTimeout(() => {
       resolve([200, groupJson]);
     }, 100);
