@@ -1,6 +1,8 @@
 import VueRouter from 'vue-router'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
+import store from 'store'
+console.log('store', store)
 
 import Login from 'views/login/index.vue'
 import Home from 'views/layout/home.vue'

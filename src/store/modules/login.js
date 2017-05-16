@@ -80,7 +80,7 @@ export default {
       return new Promise((resolve, reject) => {
         loginApi.login(userInfo).then(response => {
           const data = response.data;
-          saveCookie('Acess-Token', response.data.token);
+          saveCookie('Access-Token', response.data.token);
           commit(SET_TOKEN, data.token);
           resolve();
         }).catch(error => {
