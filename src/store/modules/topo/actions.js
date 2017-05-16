@@ -1,4 +1,6 @@
 import * as types from './mutation_type'
+import topoApi from 'api/topo'
+import iconApi from 'api/manager/iconmanager'
 
 export default {
   // 设置当前拓扑图图标数据
@@ -10,19 +12,56 @@ export default {
     commit(types.SUCCESS_SET_CURMAPELE, curMapElement)
   },
   // 设置用户图标
-  setUserIcons({commit}, userIcons) {
-    commit(types.SUCCESS_SET_USERICONS, userIcons)
+  getUserIcons({commit}) {
+    return new Promise((resolve, reject) => {
+      iconApi.getUserIcons().then(response => {
+        if (response.status != 200) {
+          commit(types.SUCCESS_SET_USERICONS, response.data)
+        }
+        resolve(response);
+      }).catch(error => {
+        reject(error);
+      });
+    });
   },
   // 设置系统图标
-  setSysIcons({commit}, sysIcons) {
-    commit(types.SUCCESS_SET_SYSICONS, sysIcons)
+  getSysIcons({commit}) {
+    return new Promise((resolve, reject) => {
+      topoApi.querySysImage().then(response => {
+        if (response.status != 200) {
+          commit(types.SUCCESS_SET_SYSICONS, response.data)
+        }
+        resolve(response);
+      }).catch(error => {
+        reject(error);
+      });
+    });
+
   },
   // 设置交换机接口数据
-  setExchangerInterfaceData({commit}, exchangerInterfaceData) {
-    commit(types.SUCCESS_SET_EXCHANGER_INTERFACE_DATA, exchangerInterfaceData)
+  getExchangerInterfaceData({commit}) {
+    return new Promise((resolve, reject) => {
+      topoApi.queryInterface().then(response => {
+        if (response.status != 200) {
+          commit(types.SUCCESS_SET_EXCHANGER_INTERFACE_DATA, response.data)
+        }
+        resolve(response);
+      }).catch(error => {
+        reject(error);
+      });
+    });
   },
   // 设置交换机主机数据
-  setExchangerHostData({commit}, exchangerHostData) {
-    commit(types.SUCCESS_SET_EXCHANGER_HOST_DATA, exchangerHostData)
+  getExchangerHostData({commit}) {
+    return new Promise((resolve, reject) => {
+      topoApi.queryExchangerHost().then(response => {
+        if (response.status != 200) {
+          commit(types.SUCCESS_SET_EXCHANGER_HOST_DATA, response.data)
+        }
+        resolve(response);
+      }).catch(error => {
+        reject(error);
+      });
+    });
   }
 }

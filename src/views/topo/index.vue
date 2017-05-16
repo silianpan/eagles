@@ -10,7 +10,9 @@
   <!-- 拓扑图  -->
   <topoGraphComp></topoGraphComp>
   <!-- 右键菜单 -->
-  <topoContextMenuComp></topoContextMenuComp>
+  <topoContextMenuComp :sysIcons="sysIcons" :userIcons="userIcons" :exchangerHostData="exchangerHostData"
+    :exchangerInterfaceData="exchangerInterfaceData"
+  ></topoContextMenuComp>
 </div>
 </template>
 <script>
@@ -30,7 +32,11 @@ export default {
       toolbarBtns: TOPO_BTN_COMMON.concat(TOPO_BTN_TOPO),
       topoBaseDataUrl: '/dirms/monitor/sysmap/all',
       topoDataByIdUrl: '/dirms/monitor/sysmap/get/',
-      iconDataUrl: '/dirms/monitor/image/getByMapid/'
+      iconDataUrl: '/dirms/monitor/image/getByMapid/',
+      sysIcons: {},
+      userIcons: {},
+      exchangerHostData: {},
+      exchangerInterfaceData: {}
     }
   },
   components: {
@@ -48,18 +54,24 @@ export default {
       //   self.$store.dispatch('setUserIcons', response.data);
       // });
 
-      Ajax.syncQuery('/dirms/monitor/icons/getUserIcons', {}, function(data) {
-        self.$store.dispatch('setUserIcons', data);
+      this.$store.dispatch('getUserIcons').then((response) => {
+        self.userIcons = response.data;
       });
+      // Ajax.syncQuery('/dirms/monitor/icons/getUserIcons', {}, function(data) {
+      //   self.$store.dispatch('setUserIcons', data);
+      // });
 
       // 系统图标
       // topoApi.querySysImage().then(response => {
       //   self.$store.dispatch('setSysIcons', response.data);
       // });
 
-      Ajax.syncQuery('/dirms/monitor/image/getSysIcons', {}, function(data) {
-        self.$store.dispatch('setSysIcons', data);
+      this.$store.dispatch('getSysIcons').then((response) => {
+        self.sysIcons = response.data;
       });
+      // Ajax.syncQuery('/dirms/monitor/image/getSysIcons', {}, function(data) {
+      //   self.$store.dispatch('setSysIcons', data);
+      // });
 
     },
     initExchangerHostData() {
@@ -68,17 +80,23 @@ export default {
       //   self.$store.dispatch('setExchangerHostData', response.data);
       // });
 
-      Ajax.syncQuery('/dirms/monitor/application/getExchanger', {}, function(data) {
-        self.$store.dispatch('setExchangerHostData', data);
+      this.$store.dispatch('getExchangerHostData').then((response) => {
+        self.exchangerHostData = response.data;
       });
+      // Ajax.syncQuery('/dirms/monitor/application/getExchanger', {}, function(data) {
+      //   self.$store.dispatch('setExchangerHostData', data);
+      // });
 
       // topoApi.queryInterface().then(response => {
       //   self.$store.dispatch('setExchangerInterfaceData', response.data);
       // });
 
-      Ajax.syncQuery('/dirms/monitor/item/getInterface', {}, function(data) {
-        self.$store.dispatch('setExchangerInterfaceData', data);
+      this.$store.dispatch('getExchangerInterfaceData').then((response) => {
+        self.exchangerInterfaceData = response.data;
       });
+      // Ajax.syncQuery('/dirms/monitor/item/getInterface', {}, function(data) {
+      //   self.$store.dispatch('setExchangerInterfaceData', data);
+      // });
     }
   }
 }

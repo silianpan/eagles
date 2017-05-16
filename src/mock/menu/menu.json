@@ -276,7 +276,7 @@
       "name": "拓扑图",
       "parent": null,
       "children": null,
-      "displayName": "/topo",
+      "displayName": "/topo/topoMgm",
       "authUrl": "/pages/app/topo/topo.jsp",
       "parentSelf": "93096574ff2411e696ab28d244fdc4d2",
       "authType": "1",

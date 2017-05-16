@@ -22,6 +22,9 @@ import modifyLinkComp from './modifyLink.vue'
 import exchangeRuijieComp from './exchange_ruijie.vue'
 import scriptResultComp from './scriptResult.vue'
 export default {
+  props: [
+    "sysIcons","userIcons","exchangerHostData","exchangerInterfaceData"
+  ],
   data() {
     return {
       graphView: null,

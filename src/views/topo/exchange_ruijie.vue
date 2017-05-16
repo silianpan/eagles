@@ -12,6 +12,18 @@ export default {
       default: function() {
         return {}
       }
+    },
+    exchangerHostData: {
+      style: Object,
+      default: function() {
+        return {}
+      }
+    },
+    exchangerInterfaceData: {
+      style: Object,
+      default: function() {
+        return {}
+      }
     }
   },
   data() {
@@ -40,8 +52,8 @@ export default {
       panelSize: [475, 100, 2],
       itemSize: [28, 23, 10],
       g3dDm: null,
-      exchangerInterfaceData: this.$store.state.topo.exchangerInterfaceData,
-      exchangerHostData: this.$store.state.topo.exchangerHostData
+      // exchangerInterfaceData: this.$store.state.topo.exchangerInterfaceData,
+      // exchangerHostData: this.$store.state.topo.exchangerHostData
     }
   },
   mounted() {

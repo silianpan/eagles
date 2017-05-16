@@ -89,6 +89,18 @@ export default {
       default: function() {
         return {}
       }
+    },
+    sysIcons: {
+      style: Object,
+      default: function() {
+        return {}
+      }
+    },
+    userIcons: {
+      style: Object,
+      default: function() {
+        return {}
+      }
     }
   },
   data() {
@@ -96,12 +108,19 @@ export default {
       formLabelWidth: '50px',
       mapelementtypes: MAPELEMENTTYPES,
       userAndSysIcons: {},
-      sysIcons: {}
     }
   },
   mounted() {
-    this.sysIcons = this.$store.state.topo.sysIcons;
-    this.userAndSysIcons = $.extend({},this.$store.state.topo.userIcons,this.sysIcons);
+    // const self = this;
+    // self.$store.dispatch('getUserIcons').then((response1) => {
+    //   self.$store.dispatch('getSysIcons').then((response2) => {
+    //     self.sysIcons = response2.data;
+    //     self.userAndSysIcons = $.extend({},response1.data,response2.data);
+    //   });
+    // });
+    // this.sysIcons = this.$store.state.topo.sysIcons;
+    // this.userAndSysIcons = $.extend({},this.$store.state.topo.userIcons,this.sysIcons);
+    this.userAndSysIcons = $.extend({},this.sysIcons,this.userIcons);
   },
   methods: {
     modifyhost() {
