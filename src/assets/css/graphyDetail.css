@@ -1,0 +1,76 @@
+.noPositionAbsolute {
+  position: static !important;
+}
+
+.noPositionAbsolute canvas {
+  position: static !important;
+}
+
+.taskLi {
+  background: #0000ff;
+  cursor: hand
+}
+
+.taskLi:hover {
+  background: #ff0000;
+}
+
+.graphyClass {
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  top: 65px;
+  bottom: 0px;
+  left: 180px;
+  right: 0px;
+}
+
+.graphyClass2 {
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  top: 65px;
+  bottom: 0px;
+  left: 40px;
+  right: 0px;
+}
+
+.graphyClass3 {
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.overview {
+  position: absolute;
+  left: 180px;
+  bottom: 0px;
+  width: 200px;
+  height: 150px;
+  background: rgb(240, 239, 248);
+}
+
+.overview2 {
+  position: absolute;
+  left: 50px;
+  bottom: 0px;
+  width: 200px;
+  height: 150px;
+  background: rgb(240, 239, 248);
+}
+
+.animation {
+  -webkit-transition: width .3s, height .3s;
+  -moz-transition: width .3s, height .3s;
+  -o-transition: width .3s, height .3s;
+  transition: width .3s, height .3s;
+}
+
+.topo-toolbar {
+  z-index: 9999;
+  /*float: right;*/
+}

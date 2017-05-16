@@ -9,6 +9,7 @@ import Home from 'views/layout/home.vue'
 // components
 import TableDemo from 'views/table/index.vue'
 import Introduction from 'views/introduction'
+import Topo from 'views/topo'
 
 let routes = [
   {
@@ -27,6 +28,15 @@ let routes = [
         name: "TableDemo",
         path: '/table',
         component: TableDemo
+      },
+      {
+        path:'/topo/topoMgm',
+        name:"Topo",
+        meta: {
+          displayName:'网络拓扑',
+          requireAuth: false,
+        },
+        component: Topo
       }
     ]
   },
