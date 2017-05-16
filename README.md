@@ -4,7 +4,7 @@ date: 2017-05-13 17:43:03
 tags: vue2 vue-i18n element-ui
 ---
 <div align=center>
-![header backgroud](vue2/04113_london_320x240.jpg)
+![header backgroud](https://github.com/silianpan/silianpan.github.io/blob/master/2017/05/13/vue2/04113_london_320x240.jpg)
 </div>
 
 [在线演示](https://silianpan.github.io/eagles/)
@@ -110,16 +110,16 @@ npm run build --report
 ![home](https://github.com/silianpan/silianpan.github.io/blob/master/2017/05/13/vue2/home.png)
 
 #### &emsp;换肤&表格
-![skin](vue2/skin.png)
+![skin](https://github.com/silianpan/silianpan.github.io/blob/master/2017/05/13/vue2/skin.png)
 
 #### &emsp;国际化&树表
-![i18n](vue2/i18n.png)
+![i18n](https://github.com/silianpan/silianpan.github.io/blob/master/2017/05/13/vue2/i18n.png)
 
 #### &emsp;拓扑图
-![topo](vue2/topo.png)
+![topo](https://github.com/silianpan/silianpan.github.io/blob/master/2017/05/13/vue2/topo.png)
 
 #### &emsp;不同风格菜单
-![menu](vue2/menu.png)
+![menu](https://github.com/silianpan/silianpan.github.io/blob/master/2017/05/13/vue2/menu.png)
 
 ## 爬坑之路
 #### &emsp;Jquery组件的正确引用
