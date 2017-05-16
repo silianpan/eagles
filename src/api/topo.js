@@ -11,7 +11,7 @@ export default {
   },
   querySysImage() {
     var url = '/dirms/monitor/image/getSysIcons';
-    return Ajax.save(url);
+    return Ajax.query(url);
   },
   createImage(image) {
     var url = '/dirms/monitor/image/create';
@@ -31,14 +31,14 @@ export default {
   },
   queryInterface() {
     var url = '/dirms/monitor/item/getInterface';
-    return Ajax.save(url);
+    return Ajax.query(url);
   },
   queryExchangerHost() {
     var url = '/dirms/monitor/application/getExchanger'
-    return Ajax.save(url);
+    return Ajax.query(url);
   },
   queryMapLinksByNodeid(mapid, nodeid) {
     var url = '/dirms/monitor/sysmap/getLink/' + mapid + '/' + nodeid;
-    return Ajax.save(url);
+    return Ajax.query(url);
   }
 }

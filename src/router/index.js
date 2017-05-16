@@ -10,6 +10,7 @@ import Home from 'views/layout/home.vue'
 import TableDemo from 'views/table/index.vue'
 import Introduction from 'views/introduction'
 import Topo from 'views/topo'
+import TreeTable from 'views/treeTable'
 
 let routes = [
   {
@@ -37,6 +38,15 @@ let routes = [
           requireAuth: false,
         },
         component: Topo
+      },
+      {
+        path:'/treetable',
+        name:"TreeTable",
+        meta: {
+          displayName:'树表',
+          requireAuth: false,
+        },
+        component: TreeTable
       }
     ]
   },

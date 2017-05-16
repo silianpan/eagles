@@ -17,6 +17,7 @@ import App from './App'
 import router from './router'
 import axios from './api/http'
 import store from './store'
+import 'mock/index'
 // 引用样式
 import 'element-ui/lib/theme-default/index.css'
 import 'assets/theme/index.css'

@@ -3,11 +3,11 @@ import Ajax from './customajax'
 export default {
   listHostgroup() {
     var url = '/dirms/monitor/group/list';
-    return Ajax.save(url);
+    return Ajax.query(url);
   },
   queryHostByGroupid(groupid) {
     var url = '/dirms/monitor/host/get/' + groupid;
-    return Ajax.save(url);
+    return Ajax.query(url);
   },
   queryGraphByHostid(hostid) {
     var url = '/dirms/monitor/graph/getByHostid/' + hostid;

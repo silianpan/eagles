@@ -1,0 +1,102 @@
+[
+    {
+        "internal": "1",
+        "children": [],
+        "groupid": "5",
+        "name": "Discovered hosts",
+        "flags": "0",
+        "id": "5",
+        "state": "closed",
+        "type": 1
+    },
+    {
+        "internal": "0",
+        "children": [],
+        "groupid": "8",
+        "name": "核心交换机",
+        "flags": "0",
+        "id": "8",
+        "state": "closed",
+        "type": 1
+    },
+    {
+        "internal": "0",
+        "children": [],
+        "groupid": "10",
+        "name": "服务器",
+        "flags": "0",
+        "id": "10",
+        "state": "closed",
+        "type": 1
+    },
+    {
+        "internal": "0",
+        "children": [],
+        "groupid": "12",
+        "name": "中间件",
+        "flags": "0",
+        "id": "12",
+        "state": "closed",
+        "type": 1
+    },
+    {
+        "internal": "0",
+        "children": [],
+        "groupid": "13",
+        "name": "其它",
+        "flags": "0",
+        "id": "13",
+        "state": "closed",
+        "type": 1
+    },
+    {
+        "internal": "0",
+        "children": [],
+        "groupid": "14",
+        "name": "虚拟机",
+        "flags": "0",
+        "id": "14",
+        "state": "closed",
+        "type": 1
+    },
+    {
+        "internal": "0",
+        "children": [],
+        "groupid": "15",
+        "name": "存储设备",
+        "flags": "0",
+        "id": "15",
+        "state": "closed",
+        "type": 1
+    },
+    {
+        "internal": "0",
+        "children": [],
+        "groupid": "16",
+        "name": "硬件监控",
+        "flags": "0",
+        "id": "16",
+        "state": "closed",
+        "type": 1
+    },
+    {
+        "internal": "0",
+        "children": [],
+        "groupid": "17",
+        "name": "数据库",
+        "flags": "0",
+        "id": "17",
+        "state": "closed",
+        "type": 1
+    },
+    {
+        "internal": "0",
+        "children": [],
+        "groupid": "19",
+        "name": "测试",
+        "flags": "0",
+        "id": "19",
+        "state": "closed",
+        "type": 1
+    }
+]
