@@ -26,6 +26,7 @@ export default {
   mounted() {
     this.addEventListener();
     this.initTopoData();
+
   },
   props: {
     topoBaseDataUrl: {
@@ -76,6 +77,9 @@ export default {
       const self = this;
       Ajax.query(this.topoBaseDataUrl).then(response => {
         self.topoBaseInfo = response.data;
+        if (response.data.length > 0) {
+          self.value = response.data[0].sysmapid
+        }
       });
     },
     createTopoGraph(topoId) {
