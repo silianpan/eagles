@@ -7,7 +7,7 @@
         "year": null,
         "provinceCode": null,
         "page": null,
-        "name": "大屏展示",
+        "name": "简述",
         "parent": null,
         "children": null,
         "displayName": "BigScreen",
@@ -33,7 +33,7 @@
         "year": null,
         "provinceCode": null,
         "page": null,
-        "name": "设备监控",
+        "name": "组件",
         "parent": null,
         "children": [
             {
@@ -44,7 +44,7 @@
                 "year": null,
                 "provinceCode": null,
                 "page": null,
-                "name": "设备管理",
+                "name": "表格",
                 "parent": null,
                 "children": null,
                 "displayName": "/device/deviceMgm",
@@ -86,7 +86,7 @@
         "year": null,
         "provinceCode": null,
         "page": null,
-        "name": "网络拓扑",
+        "name": "拓扑图",
         "parent": null,
         "children": [
             {
@@ -139,7 +139,7 @@
         "year": null,
         "provinceCode": null,
         "page": null,
-        "name": "业务管理",
+        "name": "图表",
         "parent": null,
         "children": null,
         "displayName": "businessMgm",

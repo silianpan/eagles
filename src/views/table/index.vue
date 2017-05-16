@@ -1,130 +1,114 @@
 <template>
-
-    <v-table :options="mytable" @cellDoubleClickedHandle ="cellDoubleClickedHandle" @refreshActionHandle="pageQuery" @deleteHandle = "deleteHandle" @saveHandle ="saveHandle"></v-table>
-
+  <div>
+    <div class="btn-group" style="margin-bottom: 10px;">
+      <el-input v-model="input" placeholder="请输入关键字" size='small' icon="search" @change="inputChangeAction"></el-input>
+    </div>
+    <v-table :options="alarmtable" @refreshActionHandle="getProblemPageQuery"></v-table>
+  </div>
 </template>
 
 <script>
-  import vTable from 'components/Table.vue'
+  import vTable from 'components/Table'
+  import alarmApi from 'api/alarm'
+  import resType from 'common/resTypeEnum'
   export default {
     components:{
         vTable
     },
     data:function (){
-
       return {
-        mytable:{
+        alarmtable:{
           data:[
-            {
-              date: '2016-05-03',
-              name: '王小虎',
-              address: '上海市普陀区金沙江路 1518 弄'
-            },
-            {
-              date: '2016-05-02',
-              name: '王小虎',
-              address: '上海市普陀区金沙江路 1518 弄'
-            },
-            {
-              date: '2016-05-04',
-              name: '王小虎',
-              address: '上海市普陀区金沙江路 1518 弄'
-            },
-             {
-              date: '2016-05-01',
-              name: '王小虎',
-              address: '上海市普陀区金沙江路 1518 弄'
-            }
+
           ],
           columns:[
             //如果是多选 或者 有序号 添加这个
             {
-              type:"index",//index
-              fixed:'left',
-              minWidth:'40'
+              type:"selection",
+              width:'55',
+              fixed: false
             },
 
             //所需要展示data 中的 数据 ，prop 绑定 data 中的属性值， label为表格中column 的header 值
             {
-              prop:'date',
-              label:'日期',
+              prop:'time',
+              label:'时间',
+              minWidth:'120',
+              sortable: true
+            },
+            {
+              prop:'hostid',
+              label:'主机编号',
               minWidth:'100'
             },
             {
-              prop:'name',
-              label:'名字',
+              prop:'hostname',
+              label:'主机名称',
               minWidth:'100'
             },
             {
-              prop:'name',
-              label:'名字',
-              minWidth:'100'
-            },
-            {
-              prop:'name',
-              label:'名字',
-              minWidth:'100'
-            },
-            {
-              prop:'address',
-              label:'地址',
+              prop:'errorinfo',
+              label:'问题',
               minWidth:'200'
             },
-            //有操作动作时
             {
-              label:'操作',
-              fixed:'right',
-              minWidth:'300',
-              operates:[
-                {
-                    name:'保存',
-                    type:'primary',
-                    icon:'',
-                    actionName:'saveHandle' //相应的在组件上 写好 @{{actionName}}
-                },
-                {
-                    name:'删除',
-                    type:'primary',
-                    icon:'',
-                    actionName:'deleteHandle'
-                }
-              ]
+              prop:'clevel',
+              label:'严重性',
+              minWidth:'100'
             }
          ],
-          hasPagination :true,
-          pageSize:4,
-          pageIndex:2,
-          total:20
-        }
+         hasPagination : true,
+         total: 0
+       },
+       input: '',
+       allData: []
       };
     },
     methods:{
-      cellDoubleClickedHandle(row,ev){
-        console.log("########父组件接收到子组件的信息");
-        console.log(row,ev);
+      setAlarmDisplayStyle(alarmData) {
+        $.each(alarmData, function() {
+          const alarmLevel = resType.getAlarmSeverityLevel(this.clevel);
+          this.style = alarmLevel.style;
+          this.clevel = alarmLevel.label;
+        });
       },
-
-      saveHandle(index,row){
-        console.log("######saveHandle收到子组件信息");
-        console.log(index,row);
+      getProblemPageQuery(pageNo, pageSize) {
+        const self = this;
+        alarmApi.getProblemPageQuery(pageNo, pageSize).then(response => {
+          self.alarmtable.data = response.data.rows;
+          self.alarmtable.total = response.data.total;
+          self.allData = self.alarmtable.data;
+          self.setAlarmDisplayStyle(self.alarmtable.data);
+        });
       },
-      deleteHandle(index,row){
-        console.log("######deleteHandle收到子组件信息");
-        console.log(index,row);
+      inputChangeAction() {
+        let filterData = [];
+        const self = this;
+        if (this.input == '') {
+          this.getProblemPageQuery(1, 10);
+        } else {
+          $.each(this.allData, function() {
+            if (self.isAlarmItemIncludeKey(self.input, this)) {
+              filterData.push(this);
+            }
+          });
+          this.alarmtable.data = filterData;
+          self.alarmtable.total = this.alarmtable.data.length;
+        }
       },
-      //如果有分页
-      pageQuery(pageIndex,pageSize){
-        console.log("###########pageQuery收到子组件信息");
-        console.log(pageIndex,pageSize);
+      isAlarmItemIncludeKey(key, alarmItem) {
+        let time = alarmItem.time;
+        let hostid = alarmItem.hostid;
+        let hostname = alarmItem.hostname;
+        let errorinfo = alarmItem.errorinfo;
+        if (time.indexOf(key) >= 0 || hostid.indexOf(key) >= 0 || hostname.indexOf(key) >= 0 || errorinfo.indexOf(key) >= 0) {
+          return true;
+        }
+        return false;
       }
     },
     mounted:function (){
-
+      this.getProblemPageQuery(1, 10);
     }
   }
 </script>
-
-
-<style>
-
-</style>

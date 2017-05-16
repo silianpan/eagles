@@ -10,5 +10,9 @@
   "locales": {
     "en-US": "English",
     "zh-CN": "Chinese"
-  }
+  },
+  "skin": "skin",
+  "default": "default",
+  "purple": "purple",
+  "introduction": "introduction"
 }

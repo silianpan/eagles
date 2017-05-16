@@ -42,7 +42,6 @@
 			getMenuList:function (){
 				var self =this;
 				this.$store.dispatch('getMenuList').then( (response) =>{
-					console.log('menu response', response)
 					if (response.data !=null && response.data.errorCode ==null){
 						self.menuList = response.data;
 					}else{

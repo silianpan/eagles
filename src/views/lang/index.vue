@@ -5,7 +5,7 @@
       </el-option>
     </el-select> -->
     <el-dropdown @command="handleCommandSkin" trigger="hover" class="eldropdown">
-      <span class="el-dropdown-link lang">皮肤</span>
+      <span class="el-dropdown-link lang">{{$t('skin')}}</span>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item v-for="(item,index) in skins" :key="index" :command="item.name">{{item.label}}</el-dropdown-item>
       </el-dropdown-menu>
@@ -27,7 +27,7 @@ export default {
     return {
       locale: 'zh-CN',
       langs: LANGS,
-      skins: [{name:'default',label:'默认'},{name:'purple',label:'墨紫'}],
+      skins: [{name:'default',label:this.$t('default')},{name:'purple',label:this.$t('purple')}],
     };
   },
   mounted() {

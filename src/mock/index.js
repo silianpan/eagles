@@ -2,6 +2,7 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import loginAPI from './login';
 import menuAPI from './menu'
+import tableAPI from './components/table'
 const mock = new MockAdapter(axios);
 
 // 登录相关
@@ -11,5 +12,8 @@ mock.onGet('/user/info').reply(loginAPI.getInfo);
 
 // 菜单
 mock.onGet('/dirms/security/authority/findNavAuthoritesByUser').reply(menuAPI.getMenuList);
+
+// 表格
+mock.onGet('/dirms/monitor/problem/pagequery').reply(tableAPI.getProblemPageQuery);
 
 export default mock;
