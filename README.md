@@ -4,7 +4,7 @@ date: 2017-05-13 17:43:03
 tags: vue2 vue-i18n element-ui
 ---
 <div align=center>
-![header backgroud](https://github.com/silianpan/silianpan.github.io/blob/master/2017/05/13/vue2/04113_london_320x240.jpg)
+![04113_london_320x240](https://github.com/silianpan/silianpan.github.io/blob/master/2017/05/13/vue2/04113_london_320x240.jpg)
 </div>
 
 [在线演示](https://silianpan.github.io/eagles/)
