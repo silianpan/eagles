@@ -31,7 +31,7 @@ module.exports = {
     staticPath:'/static/',
     proxyTable: {
       '/ajax': {
-        target: 'http://219.222.189.104:8080',
+        target: 'http://127.0.0.1:8080',
         // target: 'http://127.0.0.1:8081',
         changeOrigin: true,
         pathRewrite: {
