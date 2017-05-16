@@ -107,7 +107,7 @@ npm run build --report
 
 ## 部分截图
 #### &emsp;首页
-![home](vue2/home.png)
+![home](https://github.com/silianpan/silianpan.github.io/blob/master/2017/05/13/vue2/home.png)
 
 #### &emsp;换肤&表格
 ![skin](vue2/skin.png)
