@@ -36,7 +36,7 @@ export default {
   props:['collapsed'],
   data(){
     return {
-      sysName: '配网管理系统',
+      sysName: 'Eagles',
       // sysUserName: "admin",
       sysUserAvatar: ''
     };

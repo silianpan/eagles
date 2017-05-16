@@ -5,6 +5,7 @@
 
 import axios from 'axios'
 import store from 'store'
+import * as types from 'store/modules/login'
 import NProgress from 'nprogress'
 // axios 配置
 axios.defaults.withCredentials = true ;
@@ -40,7 +41,7 @@ axios.interceptors.response.use(
       switch (error.response.status) {
         case 401:
           // 返回 401 清除token信息并跳转到登录页面
-          // store.commit(types.LOGOUT_USER);
+          store.state.login.commit(types.LOGOUT_USER);
           router.replace({
             path: 'login',
             query: {

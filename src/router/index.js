@@ -51,7 +51,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   NProgress.start();
   if (to.meta.requireAuth) { // 判断该路由是否需要登录权限
-    if (store.state.token) { // 通过vuex state获取当前的token是否存在
+    if (store.state.login.token) { // 通过vuex state获取当前的token是否存在
       next();
     } else {
       next({

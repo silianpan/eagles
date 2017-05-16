@@ -1,5 +1,6 @@
 import axios from './http'
 import NProgress from 'nprogress'
+import store from 'store'
 import {API_BASEURL,API_TIMEOUT} from '../config'
 export default {
   axiosOptions: function(url, method = 'get', params = {}, tag = true) {
@@ -11,7 +12,7 @@ export default {
       headers: {
         'X-Requested-With': 'XMLHttpRequest',
         'credentials': 'include',
-        // 'Access-Token': self.$store.state.login.token
+        'Access-Token': store.state.login.token
       },
       // `responseType` 表示服务器响应的数据类型，可以是 'arraybuffer', 'blob', 'document', 'json', 'text', 'stream'
       responseType: 'json',

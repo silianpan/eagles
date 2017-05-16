@@ -19,8 +19,6 @@
 </template>
 
 <script>
-// import LoginService from 'api/login'
-import * as types from 'store/modules/login'
 export default {
   data() {
     return {
@@ -80,7 +78,6 @@ export default {
         text-align: center;
         font-size:30px;
         color: #fff;
-
     }
 
     .ms-login{
