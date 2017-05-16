@@ -8,6 +8,7 @@ import Home from 'views/layout/home.vue'
 
 // components
 import TableDemo from 'views/table/index.vue'
+import Introduction from 'views/introduction'
 
 let routes = [
   {
@@ -18,8 +19,13 @@ let routes = [
     },
     children: [
       {
-        name: "TableDemo",
+        name: "Introduction",
         path: '/',
+        component: Introduction
+      },
+      {
+        name: "TableDemo",
+        path: '/table',
         component: TableDemo
       }
     ]
