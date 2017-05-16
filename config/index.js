@@ -29,7 +29,18 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     staticPath:'/static/',
-    proxyTable: {},
+    proxyTable: {
+      '/ajax': {
+        target: 'http://219.222.189.104:8080',
+        // target: 'http://127.0.0.1:8081',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/ajax': '/dirms-service'
+        },
+        onProxyReq (proxyReq, req, res) {
+        }
+      }
+    },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
     // (https://github.com/webpack/css-loader#sourcemaps)

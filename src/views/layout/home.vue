@@ -20,7 +20,6 @@
 <script>
  import vHead from './header.vue';
  import vSidebar from './sidebar.vue';
- // import MenuService from 'api/security/menu' ;
  export default {
      components:{
          vHead, vSidebar
@@ -42,7 +41,8 @@
 			},
 			getMenuList:function (){
 				var self =this;
-				MenuService.getMenuList().then( (response) =>{
+				this.$store.dispatch('getMenuList').then( (response) =>{
+					console.log('menu response', response)
 					if (response.data !=null && response.data.errorCode ==null){
 						self.menuList = response.data;
 					}else{
