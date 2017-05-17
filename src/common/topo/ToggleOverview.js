@@ -1,4 +1,4 @@
-import {STATIC_IMAGEPATH} from '../../config'
+import {STATIC_IMAGEPATH} from 'src/config'
 const shrinkImg = STATIC_IMAGEPATH + 'shrink.png'
 const expandImg = STATIC_IMAGEPATH + 'expand.png'
 export class ToggleOverview {

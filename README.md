@@ -1,7 +1,7 @@
 ---
-title: vue2 eagles项目爬坑之路 —— 集成多方组件
+title: vue2 eagles项目爬坑之路 —— 各种组件封装
 date: 2017-05-13 17:43:03
-tags: vue2 vue-i18n element-ui
+tags: vue2 vue-i18n element-ui axios custom-theme hightopo echars vue-awesome koa2 
 ---
 <!-- <div align=center> -->
 ![04113_london_320x240](https://github.com/silianpan/silianpan.github.io/blob/master/2017/05/13/vue2/04113_london_320x240.jpg)

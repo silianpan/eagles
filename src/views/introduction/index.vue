@@ -2,7 +2,7 @@
 <div class="introduce">
   <el-row>
     <div class="info-head">
-      <i class="icon-silianpan-logo"></i>
+      <img :src="head" class="headSize"/>
     </div>
     <div class="info-container">
       <span class="name">silianpan</span>
@@ -48,7 +48,8 @@ export default {
       githubImg: STATIC_IMAGEPATH + 'github.png',
       weibo: STATIC_IMAGEPATH + 'sinaweibo.png',
       bokeyuan: STATIC_IMAGEPATH + 'bokeyuan.png',
-      zhihu: STATIC_IMAGEPATH + 'zhihu.png'
+      zhihu: STATIC_IMAGEPATH + 'zhihu.png',
+      head: STATIC_IMAGEPATH + 'head.jpg'
     }
   },
   methods: {
@@ -58,6 +59,10 @@ export default {
 
 <style scoped>
 
+  .headSize {
+    width:180px;
+    height:180px
+  }
   .introduce {
     margin: 20px 40px;
   }

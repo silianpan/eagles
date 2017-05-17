@@ -7,7 +7,7 @@ export default {
   },
   queryImageByMapid(mapid) {
     var url = '/dirms/monitor/image/getByMapid/' + mapid;
-    return Ajax.save(url);
+    return Ajax.query(url);
   },
   querySysImage() {
     var url = '/dirms/monitor/image/getSysIcons';
