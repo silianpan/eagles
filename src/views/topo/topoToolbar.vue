@@ -13,6 +13,10 @@
 import Ajax from 'api/customajax'
 import eventHubs from 'common/eventHubs'
 import addTopoEle from 'common/topo/addTopoElement'
+import sysmap1iconjson from 'mock/topo/sysmap1icon.json'
+import sysmap2iconjson from 'mock/topo/sysmap2icon.json'
+import sysmap1json from 'mock/topo/sysmap1.json'
+import sysmap2json from 'mock/topo/sysmap2.json'
 export default {
   data() {
     return {
@@ -87,11 +91,19 @@ export default {
       const dataModel = this.graphView.getDataModel();
       dataModel.clear();
       const self = this;
+
+      if (topoId == 2) {
+        self.currentMapData = sysmap2json[0];
+      } else {
+        self.currentMapData = sysmap1json[0];
+      }
+
+      addTopoEle.setTopoStyle(self.currentMapData, self.graphView, self.$store.state.topo.topoIconData);
       // 这里必须同步请求
-      Ajax.syncQuery(this.topoDataByIdUrl + topoId, {}, function(data) {
-        self.currentMapData = data[0];
-        addTopoEle.setTopoStyle(data[0], self.graphView, self.$store.state.topo.topoIconData);
-      });
+      // Ajax.syncQuery(this.topoDataByIdUrl + topoId, {}, function(data) {
+      //   self.currentMapData = data[0];
+      //   addTopoEle.setTopoStyle(data[0], self.graphView, self.$store.state.topo.topoIconData);
+      // });
     },
     layout() {
       const self = this;
@@ -108,9 +120,14 @@ export default {
       // if (topoId.indexOf('local') == 0) {
       //   url = this.userIconDataUrl;
       // }
-      Ajax.syncQuery(url, {}, function(data) {
-        self.$store.dispatch('setTopoIconData', data);
-      });
+      if (topoId == 2) {
+        self.$store.dispatch('setTopoIconData', sysmap2iconjson);
+      } else {
+        self.$store.dispatch('setTopoIconData', sysmap1iconjson);
+      }
+      // Ajax.syncQuery(url, {}, function(data) {
+      //   self.$store.dispatch('setTopoIconData', data);
+      // });
     },
   },
   watch: {

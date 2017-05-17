@@ -266,13 +266,13 @@ a{text-decoration: none}
   display: inline-block;
 }
 
-.icon-silianpan-logo {
+/*.icon-silianpan-logo {
   background: url("../img/head.jpg") no-repeat scroll 0 0;
   background-size: 180px 180px;
   width: 180px;
   height: 180px;
   display: inline-block;
-}
+}*/
 
 .el-table .alarm_severity_not_classified {
   background: #CCCCCC

@@ -66,7 +66,7 @@ let routes = [
 
 const router = new VueRouter({
   mode: 'history',
-  base: '/eagles',
+  base: '/eagles_dist',
   routes
 });
 

@@ -2,7 +2,9 @@
 <div class="introduce">
   <el-row>
     <div class="info-head">
-      <img :src="head" class="headSize"/>
+      <a href="https://silianpan.github.io/">
+          <img :src="beyondhuang" class="headSize"/>
+      </a>
     </div>
     <div class="info-container">
       <span class="name">silianpan</span>
@@ -49,7 +51,7 @@ export default {
       weibo: STATIC_IMAGEPATH + 'sinaweibo.png',
       bokeyuan: STATIC_IMAGEPATH + 'bokeyuan.png',
       zhihu: STATIC_IMAGEPATH + 'zhihu.png',
-      head: STATIC_IMAGEPATH + 'head.jpg'
+      beyondhuang: STATIC_IMAGEPATH + 'beyondhuang.png'
     }
   },
   methods: {

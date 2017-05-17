@@ -4,6 +4,8 @@ import exchangerHostData from './exchangerHostData.json'
 import sysicons from './sysicons.json'
 import usericons from './usericons.json'
 import sysmaps from './sysmaps.json'
+import sysmap1 from './sysmap1.json'
+import sysmap2 from './sysmap2.json'
 
 export default {
   queryInterface: () => new Promise(resolve => {
@@ -31,15 +33,24 @@ export default {
       resolve([200, sysmaps]);
     }, 100);
   }),
-  queryImageByMapid: (mapid) => new Promise(resolve => {
+  queryImageByMapid1: () => new Promise(resolve => {
     setTimeout(() => {
-      if (mapid == 1) {
-        resolve([200, sysmap1icon]);
-      } else if (mapid == 2) {
-        resolve([200, sysmap2icon]);
-      } else {
-        resolve([200, sysmap1icon]);
-      }
+      resolve([200, sysmap1icon]);
+    }, 100);
+  }),
+  queryImageByMapid2: () => new Promise(resolve => {
+    setTimeout(() => {
+      resolve([200, sysmap2icon]);
+    }, 100);
+  }),
+  querySysmapByid1: () => new Promise(resolve => {
+    setTimeout(() => {
+      resolve([200, sysmap1]);
+    }, 100);
+  }),
+  querySysmapByid2: () => new Promise(resolve => {
+    setTimeout(() => {
+      resolve([200, sysmap2]);
     }, 100);
   }),
 

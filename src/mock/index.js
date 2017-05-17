@@ -24,8 +24,16 @@ mock.onGet('/dirms/monitor/icons/getUserIcons').reply(topoAPI.getUserIcons);
 mock.onGet('/dirms/monitor/item/getInterface').reply(topoAPI.queryInterface);
 mock.onGet('/dirms/monitor/application/getExchanger').reply(topoAPI.queryExchangerHost);
 mock.onGet('/dirms/monitor/sysmap/all').reply(topoAPI.getSysMaps);
-mock.onGet('/dirms/monitor/image/getByMapid/1').reply(topoAPI.queryImageByMapid);
-mock.onGet('/dirms/monitor/image/getByMapid/2').reply(topoAPI.queryImageByMapid);
+
+mock.onGet('/dirms/monitor/image/getByMapid/1').reply(topoAPI.queryImageByMapid1);
+mock.onGet('/dirms/monitor/image/getByMapid/2').reply(topoAPI.queryImageByMapid2);
+mock.onPost('/dirms/monitor/image/getByMapid/1').reply(topoAPI.queryImageByMapid1);
+mock.onPost('/dirms/monitor/image/getByMapid/2').reply(topoAPI.queryImageByMapid2);
+
+mock.onGet('/dirms/monitor/sysmap/get/1').reply(topoAPI.querySysmapByid1);
+mock.onGet('/dirms/monitor/sysmap/get/2').reply(topoAPI.querySysmapByid2);
+mock.onPost('/dirms/monitor/sysmap/get/1').reply(topoAPI.querySysmapByid1);
+mock.onPost('/dirms/monitor/sysmap/get/2').reply(topoAPI.querySysmapByid2);
 
 // 树表结构
 mock.onGet('/dirms/monitor/group/list').reply(treeTableApi.listHostgroup);
