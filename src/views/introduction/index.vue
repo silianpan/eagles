@@ -2,7 +2,7 @@
 <div class="introduce">
   <el-row>
     <div class="info-head">
-      <i class="icon-head"></i>
+      <i class="icon-silianpan-logo"></i>
     </div>
     <div class="info-container">
       <span class="name">silianpan</span>
@@ -57,13 +57,6 @@ export default {
 </script>
 
 <style scoped>
-  .icon-head {
-    background: url("../../assets/img/head.jpg") no-repeat scroll 0 0;
-    background-size: 180px 180px;
-    width: 180px;
-    height: 180px;
-    display: inline-block;
-  }
 
   .introduce {
     margin: 20px 40px;

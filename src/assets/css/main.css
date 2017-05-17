@@ -230,7 +230,7 @@ a{text-decoration: none}
 }
 
 .icon-page-itemgreen {
-  background: url("../img/page/node-green.svg") no-repeat scroll 0 0;
+  background: url("../img/page/nodegreen.svg") no-repeat scroll 0 0;
   background-size:16px 16px;
   width: 16px;
   height: 16px;
@@ -240,7 +240,7 @@ a{text-decoration: none}
 }
 
 .icon-page-itemred {
-  background: url("../img/page/node-red.svg") no-repeat scroll 0 0;
+  background: url("../img/page/nodered.svg") no-repeat scroll 0 0;
   background-size:16px 16px;
   width: 16px;
   height: 16px;
@@ -263,6 +263,14 @@ a{text-decoration: none}
   background: url("../img/eagle2.png") no-repeat scroll 0 0;
   background-size: 30px 30px;
   margin: 5px;
+  display: inline-block;
+}
+
+.icon-silianpan-logo {
+  background: url("../img/head.jpg") no-repeat scroll 0 0;
+  background-size: 180px 180px;
+  width: 180px;
+  height: 180px;
   display: inline-block;
 }
 
