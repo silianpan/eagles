@@ -3,7 +3,7 @@ import Ajax from './customajax'
 export default {
   listMap() {
     var url = '/dirms/monitor/sysmap/all';
-    return Ajax.save(url);
+    return Ajax.query(url);
   },
   queryImageByMapid(mapid) {
     var url = '/dirms/monitor/image/getByMapid/' + mapid;
