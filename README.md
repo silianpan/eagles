@@ -1,13 +1,15 @@
 ---
 title: vue2 eagles项目爬坑之路 —— 各种组件封装
 date: 2017-05-13 17:43:03
-tags: vue2 vue-i18n element-ui axios custom-theme hightopo echars vue-awesome koa2 
+tags: vue2 vue-i18n element-ui axios custom-theme hightopo echars vue-awesome koa2
 ---
 <!-- <div align=center> -->
 ![04113_london_320x240](https://github.com/silianpan/silianpan.github.io/blob/master/2017/05/13/vue2/04113_london_320x240.jpg)
 <!-- </div> -->
 
 [在线演示](https://silianpan.github.io/eagles/)
+
+[在线演示2](http://twofloor.oschina.io/eagles_dist)
 
 ## 前言
 > &emsp;经过两个多星期的开发与整理，继我的第一篇原创博客[《从C/C++到前端转型之路》](https://silianpan.github.io/2017/05/09/road/)后，终于推出了Eagles项目，为什么取名为Eagles呢？Eagles表示雄鹰，就像神雕侠侣中雕兄展翅战胜蟒蛇一样。本项目采用vue+axios+elementui技术，集成了vuex状态管理，vue-awesome字体图标库，vue-i18n国际化，mockjs模拟api数据提交，支持sass样式编译。开发了非常适合项目的低耦合组件，如：树表、拓扑图、表格、图表等，还附加菜单管理、角色权限管理、用户管理等通用项目模块。
@@ -118,6 +120,8 @@ npm run build --report
 #### &emsp;拓扑图
 ![topo](https://github.com/silianpan/silianpan.github.io/blob/master/2017/05/13/vue2/topo.png)
 
+![topo2](https://github.com/silianpan/silianpan.github.io/blob/master/2017/05/13/vue2/topo2.png)
+
 #### &emsp;不同风格菜单
 ![menu](https://github.com/silianpan/silianpan.github.io/blob/master/2017/05/13/vue2/menu.png)
 
@@ -199,6 +203,8 @@ export const API_BASEURL = (process.env.NODE_ENV === 'production')? "/eagles-ser
 [项目地址](https://github.com/silianpan/eagles.git)
 
 [在线演示](https://silianpan.github.io/eagles/)
+
+[在线演示2](http://twofloor.oschina.io/eagles_dist)
 
 [个人博客](https://silianpan.github.io/)
 
