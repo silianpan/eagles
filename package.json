@@ -31,7 +31,8 @@
     "sass-loader": "^6.0.3",
     "node-sass": "^4.5.2",
     "mockjs": "^1.0.1-beta3",
-    "axios-mock-adapter": "^1.8.1"
+    "axios-mock-adapter": "^1.8.1",
+    "d3": "^4.9.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
