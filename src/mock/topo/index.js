@@ -25,7 +25,7 @@ export default {
   }),
   getUserIcons: () => new Promise(resolve => {
     setTimeout(() => {
-      resolve([200, exchangerHostData]);
+      resolve([200, usericons]);
     }, 100);
   }),
   getSysMaps: () => new Promise(resolve => {

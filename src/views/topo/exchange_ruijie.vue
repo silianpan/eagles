@@ -12,18 +12,6 @@ export default {
       default: function() {
         return {}
       }
-    },
-    exchangerHostData: {
-      style: Object,
-      default: function() {
-        return {}
-      }
-    },
-    exchangerInterfaceData: {
-      style: Object,
-      default: function() {
-        return {}
-      }
     }
   },
   data() {
@@ -234,6 +222,14 @@ export default {
       return {x:x, y:y, z:z};
     }
 
+  },
+  computed: {
+    exchangerHostData() {
+      return this.$store.state.topo.exchangerHostData;
+    },
+    exchangerInterfaceData() {
+      return this.$store.state.topo.exchangerInterfaceData;
+    }
   },
   watch: {
     currentMapElementData: function(newValue, oldValue) {

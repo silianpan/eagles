@@ -15,7 +15,7 @@ export default {
   getUserIcons({commit}) {
     return new Promise((resolve, reject) => {
       iconApi.getUserIcons().then(response => {
-        if (response.status != 200) {
+        if (response.status == 200) {
           commit(types.SUCCESS_SET_USERICONS, response.data)
         }
         resolve(response);
@@ -28,7 +28,7 @@ export default {
   getSysIcons({commit}) {
     return new Promise((resolve, reject) => {
       topoApi.querySysImage().then(response => {
-        if (response.status != 200) {
+        if (response.status == 200) {
           commit(types.SUCCESS_SET_SYSICONS, response.data)
         }
         resolve(response);

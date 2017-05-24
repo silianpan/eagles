@@ -20,7 +20,7 @@
           <el-col :span="2"><div class="grid-content bg-purple label-color">默认</el-input></div></el-col>
           <el-col :span="22">
             <el-select v-model="currentMapElementData.iconid_off" placeholder="默认" style="width:100%;margin:0 4px;" size="small">
-              <el-option v-for="(iconItem, iconId) in userAndSysIcons" :key="iconId"
+              <el-option v-if="iconItem.length != 0" v-for="(iconItem, iconId) in userAndSysIcons" :key="iconId"
                 :label="iconItem.name"
                 :value="iconId">
                 <img :src="'data:image/png;base64,'+iconItem.image"></img>
@@ -33,7 +33,7 @@
           <el-col :span="2"><div class="grid-content bg-purple label-color">问题</el-input></div></el-col>
           <el-col :span="22">
             <el-select v-model="currentMapElementData.iconid_on" placeholder="默认" style="width:100%;margin:0 4px;" size="small">
-              <el-option v-for="(iconItem, iconId) in userAndSysIcons" :key="iconId"
+              <el-option v-if="iconItem.length != 0" v-for="(iconItem, iconId) in userAndSysIcons" :key="iconId"
                 :label="iconItem.name"
                 :value="iconId">
                 <img :src="'data:image/png;base64,'+iconItem.image"></img>
@@ -46,7 +46,7 @@
           <el-col :span="2"><div class="grid-content bg-purple label-color">维护</el-input></div></el-col>
           <el-col :span="22">
             <el-select v-model="currentMapElementData.iconid_maintenance" placeholder="默认" style="width:100%;margin:0 4px;" size="small">
-              <el-option v-for="(iconItem, iconId) in userAndSysIcons" :key="iconId"
+              <el-option v-if="iconItem.length != 0" v-for="(iconItem, iconId) in userAndSysIcons" :key="iconId"
                 :label="iconItem.name"
                 :value="iconId">
                 <img :src="'data:image/png;base64,'+iconItem.image"></img>
@@ -59,7 +59,7 @@
           <el-col :span="2"><div class="grid-content bg-purple label-color">停用</el-input></div></el-col>
           <el-col :span="22">
             <el-select v-model="currentMapElementData.iconid_disabled" placeholder="默认" style="width:100%;margin:0 4px;" size="small">
-              <el-option v-for="(iconItem, iconId) in userAndSysIcons" :key="iconId"
+              <el-option v-if="iconItem.length != 0" v-for="(iconItem, iconId) in userAndSysIcons" :key="iconId"
                 :label="iconItem.name"
                 :value="iconId">
                 <img :src="'data:image/png;base64,'+iconItem.image"></img>
@@ -90,24 +90,11 @@ export default {
         return {}
       }
     },
-    sysIcons: {
-      style: Object,
-      default: function() {
-        return {}
-      }
-    },
-    userIcons: {
-      style: Object,
-      default: function() {
-        return {}
-      }
-    }
   },
   data() {
     return {
       formLabelWidth: '50px',
-      mapelementtypes: MAPELEMENTTYPES,
-      userAndSysIcons: {},
+      mapelementtypes: MAPELEMENTTYPES
     }
   },
   mounted() {
@@ -120,7 +107,6 @@ export default {
     // });
     // this.sysIcons = this.$store.state.topo.sysIcons;
     // this.userAndSysIcons = $.extend({},this.$store.state.topo.userIcons,this.sysIcons);
-    this.userAndSysIcons = $.extend({},this.sysIcons,this.userIcons);
   },
   methods: {
     modifyhost() {
@@ -218,6 +204,14 @@ export default {
       });
     },
   },
+  computed: {
+    sysIcons() {
+      return this.$store.state.topo.sysIcons;
+    },
+    userAndSysIcons() {
+      return $.extend({},this.sysIcons,this.$store.state.topo.userIcons);
+    }
+  }
 }
 </script>
 <style scoped>

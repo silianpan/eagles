@@ -10,9 +10,7 @@
   <!-- 拓扑图  -->
   <topoGraphComp></topoGraphComp>
   <!-- 右键菜单 -->
-  <topoContextMenuComp :sysIcons="sysIcons" :userIcons="userIcons" :exchangerHostData="exchangerHostData"
-    :exchangerInterfaceData="exchangerInterfaceData"
-  ></topoContextMenuComp>
+  <topoContextMenuComp></topoContextMenuComp>
 </div>
 </template>
 <script>
@@ -55,7 +53,7 @@ export default {
       // });
 
       this.$store.dispatch('getUserIcons').then((response) => {
-        self.userIcons = response.data;
+        // self.userIcons = response.data;
       });
       // Ajax.syncQuery('/dirms/monitor/icons/getUserIcons', {}, function(data) {
       //   self.$store.dispatch('setUserIcons', data);
@@ -67,7 +65,7 @@ export default {
       // });
 
       this.$store.dispatch('getSysIcons').then((response) => {
-        self.sysIcons = response.data;
+        // self.sysIcons = response.data;
       });
       // Ajax.syncQuery('/dirms/monitor/image/getSysIcons', {}, function(data) {
       //   self.$store.dispatch('setSysIcons', data);
@@ -81,7 +79,7 @@ export default {
       // });
 
       this.$store.dispatch('getExchangerHostData').then((response) => {
-        self.exchangerHostData = response.data;
+        // self.exchangerHostData = response.data;
       });
       // Ajax.syncQuery('/dirms/monitor/application/getExchanger', {}, function(data) {
       //   self.$store.dispatch('setExchangerHostData', data);
@@ -92,7 +90,7 @@ export default {
       // });
 
       this.$store.dispatch('getExchangerInterfaceData').then((response) => {
-        self.exchangerInterfaceData = response.data;
+        // self.exchangerInterfaceData = response.data;
       });
       // Ajax.syncQuery('/dirms/monitor/item/getInterface', {}, function(data) {
       //   self.$store.dispatch('setExchangerInterfaceData', data);
